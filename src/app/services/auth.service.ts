@@ -4,6 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
- url: string =' http://localhost:3000'
+ url: string ='http://localhost:3000'
   constructor() { }
 }
