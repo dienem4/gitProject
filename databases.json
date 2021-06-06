@@ -13,7 +13,11 @@
       "postId": 1
     }
   ],
-  "profile": {
-    "name": "typicode"
+
+    "profil":{
+      "name":"choubida",
+      "email":"choubida@gmail.com",
+      "dateNaiss":"1997-10-01",
+      "avatar":"https://eu.ui-avatars.com/api/?name=choubida"
   }
 }
