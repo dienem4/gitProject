@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
+ 
+  email : string='';
+  pass : string='';
   constructor() { }
-
-  ngOnInit() {
-  }
-
+  
+  ngOnInit() {}
+  
+   loginForm (){
+     console.log(this.email);
+     console.log(this.pass);
+   }
 }
