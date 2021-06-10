@@ -3,13 +3,31 @@
 }
 .form{
     .btnLogin{
-        --background:linear-gradient(to right top, #dc1f1f, #ea5904, #f18500, #f2ad00, #edd409);
-        --background-hover:linear-gradient(to right top, #dc1f1f, #ea5904, #f18500, #f2ad00, #edd409);
-        --background-focused: linear-gradient(to right top, #dc1f1f, #ea5904, #f18500, #f2ad00, #edd409);
-        --background-activated: linear-gradient(to right top, #dc1f1f, #ea5904, #f18500, #f2ad00, #edd409);
+        --background:linear-gradient(to right top, #053721, #116048, #198c76, #1abaaa, #12ebe5);
+        --background-hover:linear-gradient(to right top, #053721, #116048, #198c76, #1abaaa, #12ebe5);
+        --background-focused: linear-gradient(to right top, #053721, #116048, #198c76, #1abaaa, #12ebe5);
+        --background-activated: linear-gradient(to right top, #053721, #116048, #198c76, #1abaaa, #12ebe5);;
+        
         
     }
+    .errorEmail{
+        border-bottom:#ff0000;
+        --border-color:#ff0000;
+        --highlight-background :#ff0000;
+    }
+    .goodEmail{
+        border-bottom:#006400;
+        --border-color:#006400; 
+        --highlight-background :#006400;
+    } 
+    .Forgot{
+        margin-top: 0;
+        text-align: end;
+    }
 }
-p{
+
+p,
+a{
+    color:#add8e6 !important;
    text-align: center; 
 }
