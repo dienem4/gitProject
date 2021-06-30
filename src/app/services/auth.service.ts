@@ -15,10 +15,10 @@ export class AuthService {
 
            this.http.post(this.url+'/login',{email:email,password:password}).subscribe((data: any)=>{
                if (!data.sucess)
-                  rejects(false)
+                 rejects(false)
                  resolve(data)
             } )
-
+           
       })
   }
   getProfile(){

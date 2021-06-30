@@ -3,12 +3,12 @@
 }
 .form{
     .btnLogin{
-        --background:linear-gradient(to right top, #053721, #116048, #198c76, #1abaaa, #12ebe5);
-        --background-hover:linear-gradient(to right top, #053721, #116048, #198c76, #1abaaa, #12ebe5);
-        --background-focused: linear-gradient(to right top, #053721, #116048, #198c76, #1abaaa, #12ebe5);
-        --background-activated: linear-gradient(to right top, #053721, #116048, #198c76, #1abaaa, #12ebe5);;
+        --background:linear-gradient(to right top, #f9af12, #ff8e1e, #ff6b31, #f94544, #eb1256);
+        --background-hover:linear-gradient(to right top, #f9af12, #ff8e1e, #ff6b31, #f94544, #eb1256);
+        --background-focused: linear-gradient(to right top, #f9af12, #ff8e1e, #ff6b31, #f94544, #eb1256);
+        --background-activated: linear-gradient(to right top, #f9af12, #ff8e1e, #ff6b31, #f94544, #eb1256);
         
-        
+    
     }
     .errorEmail{
         border-bottom:#ff0000;
