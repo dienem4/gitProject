@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Marmiton",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

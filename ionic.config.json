@@ -1,7 +1,8 @@
 {
   "name": "Marmiton",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

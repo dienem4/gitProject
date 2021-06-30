@@ -58,11 +58,10 @@ export class LoginPage implements OnInit {
 
           localStorage.setItem('token',user.token)
           localStorage.setItem('user',JSON.stringify(user.user))
-        } else{
+        }else{
 
            await this.storage.setItem('token',user.token)
            await this.storage.setItem('user',JSON.stringify(user.user))
-         
         }
 
         await this.loading.dismiss();
