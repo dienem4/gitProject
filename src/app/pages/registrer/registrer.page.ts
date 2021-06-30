@@ -1,15 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { from } from 'rxjs';
 import { ForgotPasswordComponent } from 'src/app/modals/forgot-password/forgot-password.component';
- 
-interface userRegistrer  {
-  firstname:string;
-  lastname:string;
-  phone:string;
-  email:string;
-  password:string;
-  repassword:string;
-}
+import{UserRgistrer}from'../../interfaces/user-rgistrer';
+
+
 @Component({
   selector: 'app-registrer',
   templateUrl: './registrer.page.html',
@@ -18,12 +13,28 @@ interface userRegistrer  {
 
 
 export class RegistrerPage implements OnInit {
-        user :userRegistrer={firstname:'',lastname:'',phone:'',email:'',password:'',repassword:''};
 
+        user :UserRgistrer={firstName:'',lastName:'',phone:'',email:'',password:'',confirmPassword:''};
+        isErrorMail : boolean=true;
+        isErrorPhone :boolean=true;
   constructor( private camera: Camera) { }
 
   ngOnInit() { }
 
+  checkEmail() {
+    const regex = new RegExp(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g);
+    this.isErrorMail = (regex.test(this.user.email ))? false : true ;
+  }
+  checkPhone() {
+    const regex = new RegExp( /^((\+)33|0|0033)[1-9](\d{2}){4}$/g);
+    this.isErrorPhone = (regex.test(this.user.phone ))? false : true ;
+  }
+    
+
+  registrer(){
+      this.user.username=this.user.email.split('@')[0];
+      console.dir(this.user);
+  }
        uploadPicture (){
        const options: CameraOptions = {
        quality: 100,
