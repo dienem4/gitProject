@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { from } from 'rxjs';
 import { ForgotPasswordComponent } from 'src/app/modals/forgot-password/forgot-password.component';
-import{UserRgistrer}from'../../interfaces/user-rgistrer';
+import{UserRegistrer}from'../../interfaces/user-registrer';
 
 
 @Component({
@@ -14,7 +14,7 @@ import{UserRgistrer}from'../../interfaces/user-rgistrer';
 
 export class RegistrerPage implements OnInit {
 
-        user :UserRgistrer={firstName:'',lastName:'',phone:'',email:'',password:'',confirmPassword:''};
+        user :UserRegistrer={firstName:'',lastName:'',phone:'',email:'',password:'',confirmPassword:''};
         isErrorMail : boolean=true;
         isErrorPhone :boolean=true;
   constructor( private camera: Camera) { }

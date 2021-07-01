@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import{ HttpClient}from '@angular/common/http';
-import{UserRegistrer}from'../interfaces/user-registrer';
+import{UserRegistrer}from '../interfaces/user-registrer';
 
 @Injectable({
   providedIn: 'root'
@@ -14,16 +14,23 @@ export class AuthService {
       return new Promise((resolve,rejects)=>{
 
            this.http.post(this.url+'/login',{email:email,password:password}).subscribe((data: any)=>{
-               if (!data.sucess)? rejects(false):  resolve(data);
+               (!data.sucess)? rejects(false):  resolve(data);
             } );
            
       });
   }
 
-  registrer(user: UserRegistrer){
+     registrer(user: UserRegistrer){
+           return new Promise((resolve,rejects)=>{
+                 this.http.post(this.url+'/signup',user).subscribe((data: any)=>{
+                   (!data.sucess)? rejects(false):  resolve(data);
+           });
+      });
+          
+    }
 
-  }
-  getProfile(){
+    getProfile(){
     return this.http.get(this.url+'/profil');
-  }
+      }
+
 }

@@ -31,11 +31,27 @@ export class LoginPage implements OnInit {
      ) { }
 
   
-  ngOnInit() {}
+  async ngOnInit() {
+    let token;
+    if(this.platform.is("desktop")){
+
+     token= localStorage.getItem('token')
+    }else{
+      token= await  this.storage.getItem('token')
+    }
+    console.log(token);
+    if (token !==undefined && token !==null)
+       this.router.navigate(['/home'])
+
+  }
 
   async forgotPassword() {
     const modal = await this.modal.create({
       component: ForgotPasswordComponent,
+      componentProps: {
+        'email': this.email
+        
+      }
     });
     return await modal.present();
   }

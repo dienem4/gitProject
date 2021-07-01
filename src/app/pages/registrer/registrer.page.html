@@ -1,3 +1,11 @@
+<!-- Default back button -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
   <ion-row class="logo">
     <ion-col size="12" class="ion-align-self-center">
@@ -29,13 +37,14 @@
           <ion-label position="floating">Password</ion-label>
           <ion-input type="password" [(ngModel)]="user.password"></ion-input>
         </ion-item> 
-        <ion-item [ngClass]="user.password.trim() != user.confirmPassword.trim() ||user.confirmPasswordtrim().length < 2? 'errorEmail' : 'goodEmail'"> 
+        <ion-item [ngClass]="user.password.trim() != user.confirmPassword.trim() ||user.confirmPassword.trim().length < 2? 'errorEmail' : 'goodEmail'"> 
           <ion-label position="floating">Re-Password</ion-label>
           <ion-input type="password" [(ngModel)]="user.confirmPassword"></ion-input>
         </ion-item> 
     </ion-col> 
     <ion-col>
-      <ion-button [disabled]="isErrorMail ||isErrorPhone || (user.password.trim() != user.confirmPassword.trim() && user.confirmPassword.trim().length < 2)"  (click)="registrer()" expand="full" class="btnLogin">Registrer</ion-button>
+      <ion-button [disabled]="isErrorMail ||isErrorPhone || (user.password.trim() != user.confirmPassword.trim() && user.confirmPassword.trim().length < 2 )" 
+                 (click)="registrer()" expand="full" class="btnLogin">Registrer</ion-button>
     </ion-col>
   </ion-row>
   <p> <a routerLink="/login"> You already have an account? login </a> </p>
