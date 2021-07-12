@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router,ActivatedRoute, NavigationEnd } from '@angular/router';
 import { ArticleFeed } from 'src/app/interfaces/article-feed';
 import { FeedsService } from 'src/app/services/feeds.service';
 @Component({
@@ -16,11 +17,24 @@ export class HomePage implements OnInit {
    ]
     
  
-  constructor(private feed: FeedsService) {}
-     async ngOnInit(){
-      this.feeds = await this.feed.requestByUrlTrashTalk()
+  constructor(private router: Router ,private route :ActivatedRoute,private feed: FeedsService) {}
+  ionViewWillEnter(){
+    console.log("ionViewWillEnter");
+
+    this.router.events.subscribe(async(event)=>{
+      if (event instanceof NavigationEnd){
+        this.feeds=(this.route.snapshot.data.json)?await this.feed.getDataBJson() :await this.feed.requestByUrlTrashTalk()
+      }
+     });
+  }
+     async ngOnInit(){ 
+     this.feeds= await this.feed.requestByUrlTrashTalk()
+     console.log('ngOnInit');
     }
 
-  
-
+  randomPicture(){
+    let min= Math.ceil(0);
+   let max =Math.floor(this.pictures.length);
+   return this.pictures[Math.floor(Math.random()*(max-min))+min];
+  }
 }

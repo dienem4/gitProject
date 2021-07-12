@@ -8,7 +8,7 @@
 
 <ion-content [fullscreen]="true">
   <ion-card *ngFor="let feed of feeds">
-    <img src="https://cdn.britannica.com/82/212182-050-50D9F3CE/basketball-LeBron-James-Cleveland-Cavaliers-2018.jpg" />
+    <img src="(feed.media===undefined)?randomPicture():feed.media"/>
     <ion-card-header>
       <ion-card-subtitle>{{feed.creator}}</ion-card-subtitle>
       <ion-card-title>{{feed.title}}</ion-card-title>

@@ -11,7 +11,7 @@ describe('FeedsService', () => {
   });
 
   it('should be created', () => {
-    service.requestByUrl(service.url[0])
+    service.requestByUrlt(service.url[0])
     expect(service).toBeTruthy();
   });
 });
